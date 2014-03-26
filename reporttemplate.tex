@@ -1,0 +1,109 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Comments are started with the % sign
+%
+%         File: reporttemplate.tex
+% Date Created: 2014 Mar 26
+%  Last Change: 2014 Mar 26
+%     Compiler: xelatex
+%       Author: gil
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%The first line of code specifies the document class and the font and
+%paper size.  The article document class is a good place to start.  
+%Some other options are:
+%
+%minimal - no fancy bits
+%report - for a thesis or a longer report containing chapters
+%book - for a book
+%letter - nice for cover letters
+%
+%
+%LaTex Libraries extend the functionality of the language.  
+%The libraries used here are as follows:
+%
+%amsmath, amssymb - loading in math symbols and greek letters
+%
+%fontspec - lets you use fonts available on your system without manually
+%installing them
+%
+%graphicx - for loading in figures/images
+%
+%booktabs, tabularx - for making pretty tables
+%
+%There are a lot of libraries available that can vastly extend LaTeX's
+%abilities, but these will be sufficient for a solid report.
+%
+%%%
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{booktabs, tabularx}
+
+\begin{document}
+%Everything inside the \begin{document} and \end{document} tags will be
+%compiled into our pdf
+
+\section{The first section}
+  We can write in plain text here and it will be typeset nicely.  If you
+  look at the source code you'll see that the \verb|\section{}| command 
+    has automatically made the section title a larger font and also numbered it.  
+
+  \section*{The second section}
+    By including an asterisk before the curly-braces, as in
+  \verb|\section*{}|,  the automatic numbering is suppressed.  
+
+  \subsection{Subsections}
+  \subsubsection{and subsubsections}
+  can be created using the \verb|\subsection{}| and
+  \verb|\subsubsection{}| commands, respectively.  Again, if you add in
+  an asterisk before the curly braces the automatic numbering will be
+  suppressed. 
+
+\section{Give up control to the machine}
+  Don't worry about where your line breaks are.  \LaTeX\ ignores
+  linebreaks in the source text.  
+  So
+  if
+  I
+  type
+  a
+  word
+  on
+  each
+  line
+  it
+  will
+  still
+  be
+  in
+  a
+  sentence.
+
+  A full blank line needs to be used to start a new paragraph.  
+
+
+  Two blank lines will still only make a new paragraph. So stop worrying
+  about the formatting and just let \LaTeX\ handle it for you.  
+
+\section{Typesetting math}
+  Ok, now we really get started.  To insert an equation into a document,
+  we have to tell \LaTeX\ that we want an equation environment.  In most
+  helper programs there will be a shortcut to insert the appropriate
+  lines.  
+
+  \begin{equation}
+    Bi = \frac{hr}{k}
+    \label{eq:biotnumber}
+  \end{equation}
+
+  Notice that an equation number has been automatically inserted.  If we
+  have a bunch of equations, we can rearrange them and they'll all be
+  renumbered automatically.  In the source, there's also a line that
+  reads \verb|\label{eq:biotnumber}| that isn't printed.  Those labels
+  can be used to reference the appropriate equation.  If you want to
+  draw attention to Equation (\ref{eq:biotnumber}), you can just
+  reference the label.  Again, if you reorder your equations, the
+  reference will automatically update.  
+\end{document}
