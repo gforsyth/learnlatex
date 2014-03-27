@@ -1,0 +1,143 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Comments are started with the % sign
+%
+%         File: reporttemplate.tex
+% Date Created: 2014 Mar 26
+%  Last Change: 2014 Mar 27
+%     Compiler: xelatex
+%       Author: gil
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{booktabs, tabularx}
+\usepackage{url}
+\usepackage{subcaption}
+
+\begin{document}
+
+\section{The first section}
+
+  \subsection{Subsection}
+  \subsubsection{and subsubsection}
+
+\section{Typesetting math}
+
+  \begin{equation}
+    Bi = \frac{hr}{k}
+    \label{eq:biotnumber}
+  \end{equation}
+
+  where $h = 1000 \frac{W}{m^2K}$, $r = .1m$, and $k = 34 \frac{W}{m
+  K}$.
+  
+  This is referencing Equation (\ref{eq:biotnumber}).
+  
+
+  \begin{itemize}
+    \item Equation labels are prefixed with eq:
+    \item Figure labels are prefixed with fig:
+    \item Table labels are prefixed with tab:
+  \end{itemize}
+
+  \begin{center}
+
+  $x^2$
+
+  $x_2$
+
+  $x^2_2$
+
+  $e^i \pi$
+
+  $e^{i \pi}$
+
+  \end{center}
+
+  \subsection{Equation arrays}
+
+  \begin{align}
+    \alpha &= 1 \\
+    \beta &= 2 \\ 
+    \delta &= 4 
+  \end{align}
+
+
+  \begin{align}
+    \gamma &= 23 \\
+  \end{align}
+
+  \section{Tables}
+    \subsection{Plain tabular} 
+\begin{tabular}{lccccccr}
+Team              & P & W & D & L & F  & A & Pts \\
+\hline
+Manchester United & 6 & 4 & 0 & 2 & 10 & 5 & 12  \\
+Celtic            & 6 & 3 & 0 & 3 &  8 & 9 &  9  \\
+Benfica           & 6 & 2 & 1 & 3 &  7 & 8 &  7  \\
+FC Copenhagen     & 6 & 2 & 1 & 3 &  5 & 8 &  7  \\
+\end{tabular}
+
+    \vspace{.5cm}
+
+\begin{tabular}{ l | c || r }
+  1 & 2 & 3 \\
+  4 & 5 & 6 \\
+  7 & 8 & 9 \\
+\end{tabular}
+
+    \subsection{Floating tables (to add captions and labels)}
+    \begin{table}[ht!]
+        \centering
+        \begin{tabular}{lccccccr}
+        Team              & P & W & D & L & F  & A & Pts \\
+        \hline
+        Manchester United & 6 & 4 & 0 & 2 & 10 & 5 & 12  \\
+        Celtic            & 6 & 3 & 0 & 3 &  8 & 9 &  9  \\
+        Benfica           & 6 & 2 & 1 & 3 &  7 & 8 &  7  \\
+        FC Copenhagen     & 6 & 2 & 1 & 3 &  5 & 8 &  7  \\
+        \end{tabular}
+      \caption{Manchester United Cheats \label{tab:FCcup}}
+    \end{table}
+
+    \clearpage
+
+\section{Figures}
+    \subsection{Standard figure}
+
+    \begin{figure}[ht!]
+      \centering
+      \includegraphics[width=.5\textwidth]{mewbacca.jpg}
+      \caption{Mewbacca \label{fig:mewbacca}}
+    \end{figure}
+   
+
+    \subsection{Multipart Figure}
+
+    %%%Subfloats (multiple figures in a row) requires subcaption package
+
+    \begin{figure}[ht!]
+            \centering
+            \begin{subfigure}[b]{0.3\textwidth}
+                    \includegraphics[width=\textwidth]{mewbacca.jpg}
+                    \caption{A mewbacca}
+                    \label{fig:mewsub1}
+            \end{subfigure}
+            ~ 
+            \begin{subfigure}[b]{0.3\textwidth}
+                    \includegraphics[width=\textwidth]{mewbacca.jpg}
+                    \caption{Another mewbacca}
+                    \label{fig:mewsub2}
+            \end{subfigure}
+            ~
+            \begin{subfigure}[b]{0.3\textwidth}
+                    \includegraphics[width=\textwidth]{mewbacca.jpg}
+                    \caption{A third mewbacca!}
+                    \label{fig:mewsub3}
+            \end{subfigure}
+            \caption{Pictures of Mewbacca}\label{fig:threemewbaccas}
+    \end{figure}
+\end{document}
