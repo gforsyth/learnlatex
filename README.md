@@ -10,10 +10,10 @@ Use an online editor and compiler.  Both [ShareLatex](http://sharelatex.com) and
 ##Install locally
 
 ###Windows
-    I recommend using MiKTeX on Windows.  The download page is [here](http://www.miktex.org/2.9/setup).  If you are using a machine in a lab, you probably don't have administrator rights, but you can still install and use the MiKTeX Portable version available on the download page.  
+I recommend using MiKTeX on Windows.  The download page is [here](http://www.miktex.org/2.9/setup).  If you are using a machine in a lab, you probably don't have administrator rights, but you can still install and use the MiKTeX Portable version available on the download page.  
 
 ###Mac
-    Download and install the [MacTex Package](http://mirror.ctan.org/systems/mac/mactex/MacTeX.mpkg.zip).  This may require admin rights. 
+Download and install the [MacTex Package](http://mirror.ctan.org/systems/mac/mactex/MacTeX.mpkg.zip).  This may require admin rights. 
 
 ###Linux
-    Your distribution almost certainly has a LaTeX package available.  Use your package manager to download and install it.  
+Your distribution almost certainly has a LaTeX package available.  Use your package manager to download and install it.  
