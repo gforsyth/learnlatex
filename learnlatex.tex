@@ -3,7 +3,7 @@
 %
 %         File: reporttemplate.tex
 % Date Created: 2014 Mar 26
-%  Last Change: 2014 Mar 26
+%  Last Change: 2014 Mar 27
 %     Compiler: xelatex
 %       Author: gil
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -40,6 +40,7 @@
 \usepackage{fontspec}
 \usepackage{graphicx}
 \usepackage{booktabs, tabularx}
+\usepackage{url}
 
 \begin{document}
 %Everything inside the \begin{document} and \end{document} tags will be
@@ -92,13 +93,13 @@ rendered in the pdf.
   about the formatting and just let \LaTeX\ handle it for you.  
 
 \section{Typesetting math}
-  Ok, now we really get started.  \LaTeX\ has two main 'modes'.  Text
+  \LaTeX\ has two main 'modes'.  Text
   rendering and math rendering.  The default mode is to render text, but
   if we want to write out equations or symbols, we need to tell the
   compiler that we're using math notation.  The first way to do that is
   to insert an equation into a document.
   We have to tell \LaTeX\ that we want an equation environment.  In most
-  helper programs there will be a shortcut to insert the appropriate
+  TeX editors there will be a shortcut to insert the appropriate
   lines.  
 
   \begin{equation}
@@ -106,44 +107,79 @@ rendered in the pdf.
     \label{eq:biotnumber}
   \end{equation}
 
-  Notice that an equation number has been automatically inserted.  If we
-  have a bunch of equations, we can rearrange them and they'll all be
-  renumbered automatically.  In the source, there's also a line that
-  reads \verb|\label{eq:biotnumber}| that isn't printed.  Those labels
-  can be used to reference the appropriate equation.  If you want to
-  draw attention to Equation (\ref{eq:biotnumber}), you can just
-  reference the label.  Again, if you reorder your equations, the
-  reference will automatically update.  
+  Notice that an equation number has been automatically inserted. 
+%  If we
+%  have a bunch of equations, we can rearrange them and they'll all be
+%  renumbered automatically.  In the source, there's also a line that
+%  reads \verb|\label{eq:biotnumber}| that isn't printed.  Those labels
+%  can be used to reference the appropriate equation.  If you want to
+%  draw attention to Equation (\ref{eq:biotnumber}), you can just
+%  reference the label.  Again, if you reorder your equations, the
+%  reference will automatically update.  
 
   Math can also be inserted inline by wrapping the math in \$ signs. So
   you might write: 
+
   \begin{equation}
     Bi = \frac{hr}{k}
     \label{eq:biotnumber2}
   \end{equation}
+
   where $h = 1000 \frac{W}{m^2K}$, $r = .1m$, and $k = 34 \frac{W}{m
   K}$.
+  
+  \subsection{Referencing Equations and Figures}
+  In the equation environment above, there's a line that reads
+  \verb|\label{eq:biotnumber}|.  Labels are optional, but if you use
+  one, you can refer to the appropriate equation number.  For instance:
+  
+  \vspace{.5cm} %%This line just adds some whitespace
+
+  This is referencing Equation (\ref{eq:biotnumber}).
+  
+  \vspace{.5cm} %%This line just adds some whitespace
+
+  If the equations are reordered, the references are automatically
+  updated.  There are common conventions for writing labels so that they
+  are easier to sort through when you have a large number of them.  
+
+  \begin{itemize}
+    \item Equation labels are prefixed with eq:
+    \item Figure labels are prefixed with fig:
+    \item Table labels are prefixed with tab:
+  \end{itemize}
+
+  In many TeX editors, when you begin a reference command (\verb|\ref{|)
+  the editor will pop up a list of possible labels to use.
 
   \subsection{Subscripts and Superscripts}
-  Within a math environment, to type a simple sub- or super-script, you
-  can use \_ or \^\ \ ,
-  respectively. 
+  Examine the code for this section to see how the following lines are
+  written in the code.
 
-  So to render $x^2$, for instance, the code reads \verb|$x^2$|.  
-  Similarly, for $x_2$, you can type \verb|$x_2$|.  And you can combine
-  them, so to render $x^2_2$, you simply type \verb|$x^2_2$| or
-  \verb|$x_2^2$| -- (\LaTeX\ doesn't care which order they're in)
+  \begin{center}
 
-  If you want more than one character in a sub- or super-script, though,
-  you need to wrap them in curly braces.  So we might write out our
-  lumped capacitance equation as
+  $x^2$
 
-  \begin{equation}
-    \Theta = e^{-t/\tau}
-  \end{equation}
+  $x_2$
 
-  which in the source is written as \verb|\Theta = e^{-t/\tau}|.
+  $x^2_2$
+
+  \end{center}
   
+  Note that there's only a single sub- or superscript in each example.
+  What if you want to write out multiple exponents?
+
+  \begin{center}
+    $e^i \pi$
+  \end{center}
+
+  Oops.  If you want more than a single character, you need to wrap the
+  entire exponent expression in curly braces.
+
+  \begin{center}
+    $e^{i \pi}$
+  \end{center}
+
   \subsection{Equation arrays}
   Sometimes you need to write out a bunch of equations in a row
   (demonstrating a derivation, for instance).  You can do this with
@@ -168,10 +204,91 @@ rendered in the pdf.
 
 
   \section{Inserting Figures or Pictures}
-    \begin{figure}[ht]
+    The figure on the next page is inserted using the following code
+    snippet.  
+    
+    \begin{verbatim}
+    \begin{figure}[H]
       \centering
       \includegraphics[width=.5\textwidth]{mewbacca.jpg}
       \caption{Mewbacca \label{fig:mewbacca}}
     \end{figure}
+    \end{verbatim}
+
+    First we begin the figure environment.  The [H] forces the image to
+    be placed roughly where the figure call is made.  Without that call,
+    Latex will place it wherever there is space for it.  
+
+    The \verb|\centering| command centers the figure (surprise!).  
+    The \verb|\includegraphics| line takes the optional argument in the
+    square brackets to resize the image.  In this case, it's set to be
+    half the width of our text.  
+
+    The filename of the image is in curly braces.  In this example, the
+    image is in the same folder as the .tex file.  If you want a
+    separate 'images' folder, then you can put 'images/mewbacca.jpg'
+    in the curly braces.
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=.5\textwidth]{mewbacca.jpg}
+      \caption{Mewbacca \label{fig:mewbacca}}
+    \end{figure}
+
+  \section{Tables}
+    Tables can be a bit of a pain. The following code generates the
+    table below.  In the tabular environment, you first specify the
+    number of columns with either an l, c or r.  These represent left-,
+    center- and right-justified, respectively.  
+
+    An \& is placed to separate individual columns and a row is
+    terminated with \verb|\\|.  The \verb|\hline| command creates a
+    horizontal line over the width of the table.  
+    \begin{verbatim}
+      \begin{tabular}{lccccccr}
+      Team              & P & W & D & L & F  & A & Pts \\
+      \hline
+      Manchester United & 6 & 4 & 0 & 2 & 10 & 5 & 12  \\
+      Celtic            & 6 & 3 & 0 & 3 &  8 & 9 &  9  \\
+      Benfica           & 6 & 2 & 1 & 3 &  7 & 8 &  7  \\
+      FC Copenhagen     & 6 & 2 & 1 & 3 &  5 & 8 &  7  \\
+      \end{tabular}
+    \end{verbatim}
+    
+\begin{tabular}{lccccccr}
+Team              & P & W & D & L & F  & A & Pts \\
+\hline
+Manchester United & 6 & 4 & 0 & 2 & 10 & 5 & 12  \\
+Celtic            & 6 & 3 & 0 & 3 &  8 & 9 &  9  \\
+Benfica           & 6 & 2 & 1 & 3 &  7 & 8 &  7  \\
+FC Copenhagen     & 6 & 2 & 1 & 3 &  5 & 8 &  7  \\
+\end{tabular}
+
+    \vspace{.5cm}
+    You can also create horizontal lines to divide up columns by specifying
+    either | or || in the column section.  For instance:
+    \vspace{.5cm}
+
+    \begin{verbatim}
+    \begin{tabular}{ l | c || r }
+      1 & 2 & 3 \\
+      4 & 5 & 6 \\
+      7 & 8 & 9 \\
+    \end{tabular}
+    \end{verbatim}
+    \vspace{.5cm}
+
+    yields
+    \vspace{.5cm}
+
+\begin{tabular}{ l | c || r }
+  1 & 2 & 3 \\
+  4 & 5 & 6 \\
+  7 & 8 & 9 \\
+\end{tabular}
+
+  \vspace{.5cm}
+  There are many helper programs that will automatically generate tables
+  from MATLAB or Python or Excel.  You can find a list of them at
+  \url{http://en.wikibooks.org/wiki/LaTeX/Tables#Using_spreadsheets}
 
 \end{document}
