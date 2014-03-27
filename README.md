@@ -27,4 +27,17 @@ Your distribution almost certainly has a LaTeX package available.  Use your pack
 
 Now that you have an editor and compiler installed, let's get started.  
 
-First, download [HelloWorld.tex]().  This is a very simple .tex document that you can compile to make sure everything is working on your end.  
+First, download [HelloWorld.tex](https://github.com/gforsyth/learnlatex/blob/master/HelloWorld.tex).
+Open it in your LaTeX editor and try to compile it.  
+Either a pdf of the simple document should open automatically, or you can click View PDF in your editor.  
+
+That's the general workflow.  A document is edited and typed in this markup format and then the compiler renders it into the completed document. 
+
+Assuming the HelloWorld document compiled without issue, we can get started on something a bit more substantial.  
+Download [learnlatex.tex](https://github.com/gforsyth/learnlatex/blob/master/learnlatex.tex).  This tex file will look for an image when it compiles to add it in to the final document, so also download the [mewbacca.jpg](https://github.com/gforsyth/learnlatex/blob/master/mewbacca.jpg) and stick it in the same directory as the tex file.  
+
+Ok, now open learnlatex.tex in your editor.  There's a lot going on here, but it will (hopefully!) be pretty straightforward.  Try to compile learnlatex.tex.  If all goes well, you should have a pdf the corresponds to the code.  
+
+Place the pdf and the editor side by side and go through the code and the resulting document line by line and you'll be able to see how a document is put together.  You can try changing or adding elements as you go, if you like.  If it doesn't compile, you can always undo your changes or just re-download the original and have another go.  
+
+Feedback is welcomed, I'd like this to be useful and not a chore.  
