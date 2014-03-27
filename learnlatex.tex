@@ -45,6 +45,10 @@
 %Everything inside the \begin{document} and \end{document} tags will be
 %compiled into our pdf
 
+Hi!  You should read this document alongside the .tex file that
+generated it so that you can get a feel for how the various commands are
+rendered in the pdf.  
+
 \section{The first section}
   We can write in plain text here and it will be typeset nicely.  If you
   look at the source code you'll see that the \verb|\section{}| command 
@@ -88,8 +92,12 @@
   about the formatting and just let \LaTeX\ handle it for you.  
 
 \section{Typesetting math}
-  Ok, now we really get started.  To insert an equation into a document,
-  we have to tell \LaTeX\ that we want an equation environment.  In most
+  Ok, now we really get started.  \LaTeX\ has two main 'modes'.  Text
+  rendering and math rendering.  The default mode is to render text, but
+  if we want to write out equations or symbols, we need to tell the
+  compiler that we're using math notation.  The first way to do that is
+  to insert an equation into a document.
+  We have to tell \LaTeX\ that we want an equation environment.  In most
   helper programs there will be a shortcut to insert the appropriate
   lines.  
 
@@ -106,4 +114,64 @@
   draw attention to Equation (\ref{eq:biotnumber}), you can just
   reference the label.  Again, if you reorder your equations, the
   reference will automatically update.  
+
+  Math can also be inserted inline by wrapping the math in \$ signs. So
+  you might write: 
+  \begin{equation}
+    Bi = \frac{hr}{k}
+    \label{eq:biotnumber2}
+  \end{equation}
+  where $h = 1000 \frac{W}{m^2K}$, $r = .1m$, and $k = 34 \frac{W}{m
+  K}$.
+
+  \subsection{Subscripts and Superscripts}
+  Within a math environment, to type a simple sub- or super-script, you
+  can use \_ or \^\ \ ,
+  respectively. 
+
+  So to render $x^2$, for instance, the code reads \verb|$x^2$|.  
+  Similarly, for $x_2$, you can type \verb|$x_2$|.  And you can combine
+  them, so to render $x^2_2$, you simply type \verb|$x^2_2$| or
+  \verb|$x_2^2$| -- (\LaTeX\ doesn't care which order they're in)
+
+  If you want more than one character in a sub- or super-script, though,
+  you need to wrap them in curly braces.  So we might write out our
+  lumped capacitance equation as
+
+  \begin{equation}
+    \Theta = e^{-t/\tau}
+  \end{equation}
+
+  which in the source is written as \verb|\Theta = e^{-t/\tau}|.
+  
+  \subsection{Equation arrays}
+  Sometimes you need to write out a bunch of equations in a row
+  (demonstrating a derivation, for instance).  You can do this with
+  consecutive single equation environments, but that can get a bit
+  tiresome and might look a little weird.  Instead, we can use the
+  \verb|align| environment.  
+
+  \begin{align}
+    \alpha &= 1 \\
+    \beta &= 2 \\ 
+    \delta &= 4 
+  \end{align}
+
+  Note that to end a line in an equation array you need to put in a
+  double-backslash.  If you add one to the last line, \LaTeX\ will add
+  another equation line, but without text it will just be a blank,
+  numbered equation.  
+
+  \begin{align}
+    \gamma &= 23 \\
+  \end{align}
+
+
+  \section{Inserting Figures or Pictures}
+    \begin{figure}[ht]
+      \centering
+      \includegraphics[width=.5\textwidth]{mewbacca.jpg}
+      \caption{Mewbacca \label{fig:mewbacca}}
+    \end{figure}
+
 \end{document}
