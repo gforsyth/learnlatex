@@ -1,4 +1,8 @@
-#Installing/Using Latex
+#What is LaTeX?
+
+LaTeX is a document preparation system.  A document is prepared in a "markup language" and is then rendered into a completed document, most commonly as a pdf.  
+
+#Installing/Using LaTeX
 
 To use LaTeX, you need both an editor and a compiler.  The editor can be any standard code editor although you may prefer using one that has LaTeX support (shortcuts, autocomplete, etc...).  I've used [Texmaker](http://www.xm1math.net/texmaker/download.html) in the past and think it's pretty good.  
 
@@ -17,3 +21,9 @@ Download and install the [MacTex Package](http://mirror.ctan.org/systems/mac/mac
 
 ###Linux
 Your distribution almost certainly has a LaTeX package available.  Use your package manager to download and install it.  
+
+#Getting started
+
+Now that you have an editor and compiler installed, let's get started.  
+
+First, download [HelloWorld.tex]().  This is a very simple .tex document that you can compile to make sure everything is working on your end.  
