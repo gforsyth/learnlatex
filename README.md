@@ -6,6 +6,7 @@ LaTeX is a document preparation system.  A document is prepared in a "markup lan
 
 To use LaTeX, you need both an editor and a compiler.  The editor can be any standard code editor although you may prefer using one that has LaTeX support (shortcuts, autocomplete, etc...).  I've used [Texmaker](http://www.xm1math.net/texmaker/download.html) in the past and think it's pretty good.  
 
+The compiler is a package that you install on your machine (unless you use one of the online options).  Instructions are available on the sites listed below to install the LaTeX compiler for your OS.
 
 ##Online
 
