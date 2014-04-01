@@ -31,6 +31,7 @@ First, download these [starter files](https://github.com/gforsyth/learnlatex/arc
 
 ##Hello World
 First, a quick test to make sure everything on your end is working.  
+
 1. Open the LaTeX editor you've chosen and load in the file HelloWorld.tex
 2. Try to compile it.  There should be a button for this labeled something like "Generate", "Run" or "Compile".  
 3. Click View PDF in your editor.  (Or your editor may automatically open the document)
