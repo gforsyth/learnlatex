@@ -31,18 +31,20 @@ First, download these [starter files](https://github.com/gforsyth/learnlatex/arc
 
 ##Hello World
 First, a quick test to make sure everything on your end is working.  
-Open the LaTeX editor you've chosen and load in the file HelloWorld.tex
-
-Try to compile it.  There should be a button for this labeled something like "Generate", "Run" or "Compile".  
-Either a pdf of the simple document should open automatically, or you can click View PDF in your editor.  
+1. Open the LaTeX editor you've chosen and load in the file HelloWorld.tex
+2. Try to compile it.  There should be a button for this labeled something like "Generate", "Run" or "Compile".  
+3. Click View PDF in your editor.  (Or your editor may automatically open the document)
 
 That's the general workflow.  A document is edited and typed in this markup format and then the compiler renders it into the completed document. 
 
 Assuming the HelloWorld document compiled without issue, we can get started on something a bit more substantial.  
-Download [learnlatex.tex](https://github.com/gforsyth/learnlatex/blob/master/learnlatex.tex).  This tex file will look for an image when it compiles to add it in to the final document, so also download the [mewbacca.jpg](https://github.com/gforsyth/learnlatex/blob/master/mewbacca.jpg) and stick it in the same directory as the tex file.  
 
-Ok, now open learnlatex.tex in your editor.  There's a lot going on here, but it will (hopefully!) be pretty straightforward.  Try to compile learnlatex.tex.  If all goes well, you should have a pdf the corresponds to the code.  
+##Learn LaTeX
 
-Place the pdf and the editor side by side and go through the code and the resulting document line by line and you'll be able to see how a document is put together.  You can try changing or adding elements as you go, if you like.  If it doesn't compile, you can always undo your changes or just re-download the original and have another go.  
+1. Open learnlatex.tex in your editor.  There's a lot going on here, but it will (hopefully!) be pretty straightforward. 
+2. Try to compile learnlatex.tex.  If all goes well, you should have a pdf the corresponds to the code.  
+3. Place the pdf and the editor side by side and go through the code and the resulting document line by line and you'll be able to see how a document is put together. 
+
+You can try changing or adding elements as you go, if you like.  If it doesn't compile, you can always undo your changes or just re-download the original and have another go.  
 
 Feedback is welcomed, I'd like this to be useful and not a chore.  
