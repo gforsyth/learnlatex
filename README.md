@@ -27,8 +27,13 @@ Your distribution almost certainly has a LaTeX package available.  Use your pack
 
 Now that you have an editor and compiler installed, let's get started.  
 
-First, download [HelloWorld.tex](https://github.com/gforsyth/learnlatex/blob/master/HelloWorld.tex).
-Open it in your LaTeX editor and try to compile it.  
+First, download these [starter files](https://github.com/gforsyth/learnlatex/archive/master.zip) and put them in their own directory.  
+
+##Hello World
+First, a quick test to make sure everything on your end is working.  
+Open the LaTeX editor you've chosen and load in the file HelloWorld.tex
+
+Try to compile it.  There should be a button for this labeled something like "Generate", "Run" or "Compile".  
 Either a pdf of the simple document should open automatically, or you can click View PDF in your editor.  
 
 That's the general workflow.  A document is edited and typed in this markup format and then the compiler renders it into the completed document. 
