@@ -3,7 +3,7 @@
 %
 %         File: reporttemplate.tex
 % Date Created: 2014 Mar 26
-%  Last Change: 2014 Mar 27
+%  Last Change: 2014 Apr 02
 %     Compiler: xelatex
 %       Author: gil
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -91,6 +91,16 @@ rendered in the pdf.
 
   Two blank lines will still only make a new paragraph. So stop worrying
   about the formatting and just let \LaTeX\ handle it for you.  
+
+  Sometimes, when you absolutely, positively just \textit{HAVE} to have
+  a little more whitespace, you can use the \verb|\vspace{}| command,
+  which will create a verticle-space of the length you specify.  
+
+  For example, if we want a 2cm space
+
+  \vspace{2cm}
+ 
+  Then we can have a 2cm space.
 
 \section{Typesetting math}
   \LaTeX\ has two main 'modes'.  Text
@@ -202,38 +212,6 @@ rendered in the pdf.
     \gamma &= 23 \\
   \end{align}
 
-
-  \section{Inserting Figures or Pictures}
-    The figure on the next page is inserted using the following code
-    snippet.  
-    
-    \begin{verbatim}
-    \begin{figure}[H]
-      \centering
-      \includegraphics[width=.5\textwidth]{mewbacca.jpg}
-      \caption{Mewbacca \label{fig:mewbacca}}
-    \end{figure}
-    \end{verbatim}
-
-    First we begin the figure environment.  The [H] forces the image to
-    be placed roughly where the figure call is made.  Without that call,
-    Latex will place it wherever there is space for it.  
-
-    The \verb|\centering| command centers the figure (surprise!).  
-    The \verb|\includegraphics| line takes the optional argument in the
-    square brackets to resize the image.  In this case, it's set to be
-    half the width of our text.  
-
-    The filename of the image is in curly braces.  In this example, the
-    image is in the same folder as the .tex file.  If you want a
-    separate 'images' folder, then you can put 'images/mewbacca.jpg'
-    in the curly braces.
-    \begin{figure}[H]
-      \centering
-      \includegraphics[width=.5\textwidth]{mewbacca.jpg}
-      \caption{Mewbacca \label{fig:mewbacca}}
-    \end{figure}
-
   \section{Tables}
     Tables can be a bit of a pain. The following code generates the
     table below.  In the tabular environment, you first specify the
@@ -244,24 +222,30 @@ rendered in the pdf.
     terminated with \verb|\\|.  The \verb|\hline| command creates a
     horizontal line over the width of the table.  
     \begin{verbatim}
-      \begin{tabular}{lccccccr}
-      Team              & P & W & D & L & F  & A & Pts \\
-      \hline
-      Manchester United & 6 & 4 & 0 & 2 & 10 & 5 & 12  \\
-      Celtic            & 6 & 3 & 0 & 3 &  8 & 9 &  9  \\
-      Benfica           & 6 & 2 & 1 & 3 &  7 & 8 &  7  \\
-      FC Copenhagen     & 6 & 2 & 1 & 3 &  5 & 8 &  7  \\
-      \end{tabular}
+    \begin{table}[ht]
+      \centering
+        \begin{tabular}{lcccccc}
+          AL East & W & L & Pct. & GB & Home & Road \\
+          Boston Red Sox & 97 & 65 & 0.599 & — & 53–28 & 44–37\\
+          Tampa Bay Rays & 92 & 71 & 0.564 & 5$\frac{1}{2}$ & 51–30 & 41–41\\
+          Baltimore Orioles & 85 & 77 & 0.525 & 12 & 46–35 & 39–42\\
+          New York Yankees & 85 & 77 & 0.525 & 12 & 46–35 & 39–42\\
+          Toronto Blue Jays & 74 & 88 & 0.457 & 23 & 40–41 & 34–47\\
+        \end{tabular}
+      \caption{AL East Standings 2013 Season\label{tab:aleast2013}}
     \end{verbatim}
-    
-\begin{tabular}{lccccccr}
-Team              & P & W & D & L & F  & A & Pts \\
-\hline
-Manchester United & 6 & 4 & 0 & 2 & 10 & 5 & 12  \\
-Celtic            & 6 & 3 & 0 & 3 &  8 & 9 &  9  \\
-Benfica           & 6 & 2 & 1 & 3 &  7 & 8 &  7  \\
-FC Copenhagen     & 6 & 2 & 1 & 3 &  5 & 8 &  7  \\
-\end{tabular}
+    \begin{table}[ht]
+      \centering
+        \begin{tabular}{lcccccc}
+          AL East & W & L & Pct. & GB & Home & Road \\
+          Boston Red Sox & 97 & 65 & 0.599 & — & 53–28 & 44–37\\
+          Tampa Bay Rays & 92 & 71 & 0.564 & 5$\frac{1}{2}$ & 51–30 & 41–41\\
+          Baltimore Orioles & 85 & 77 & 0.525 & 12 & 46–35 & 39–42\\
+          New York Yankees & 85 & 77 & 0.525 & 12 & 46–35 & 39–42\\
+          Toronto Blue Jays & 74 & 88 & 0.457 & 23 & 40–41 & 34–47\\
+        \end{tabular}
+      \caption{AL East Standings 2013 Season\label{tab:aleast2013}}
+    \end{table}
 
     \vspace{.5cm}
     You can also create horizontal lines to divide up columns by specifying
@@ -290,5 +274,37 @@ FC Copenhagen     & 6 & 2 & 1 & 3 &  5 & 8 &  7  \\
   There are many helper programs that will automatically generate tables
   from MATLAB or Python or Excel.  You can find a list of them at
   \url{http://en.wikibooks.org/wiki/LaTeX/Tables#Using_spreadsheets}
+
+  \section{Inserting Figures or Pictures}
+    The figure on the next page is inserted using the following code
+    snippet.  
+    
+    \begin{verbatim}
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=.5\textwidth]{mewbacca.jpg}
+      \caption{Mewbacca \label{fig:mewbacca}}
+    \end{figure}
+    \end{verbatim}
+
+    First we begin the figure environment.  The [H] forces the image to
+    be placed roughly where the figure call is made.  Without that call,
+    Latex will place it wherever there is space for it.  
+
+    The \verb|\centering| command centers the figure (surprise!).  
+    The \verb|\includegraphics| line takes the optional argument in the
+    square brackets to resize the image.  In this case, it's set to be
+    half the width of our text.  
+
+    The filename of the image is in curly braces.  In this example, the
+    image is in the same folder as the .tex file.  If you want a
+    separate 'images' folder, then you can put 'images/mewbacca.jpg'
+    in the curly braces.
+    \begin{figure}[ht]
+      \centering
+      \includegraphics[width=.5\textwidth]{mewbacca.jpg}
+      \caption{Mewbacca \label{fig:mewbacca}}
+    \end{figure}
+
 
 \end{document}
