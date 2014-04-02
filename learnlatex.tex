@@ -118,14 +118,6 @@ rendered in the pdf.
   \end{equation}
 
   Notice that an equation number has been automatically inserted. 
-%  If we
-%  have a bunch of equations, we can rearrange them and they'll all be
-%  renumbered automatically.  In the source, there's also a line that
-%  reads \verb|\label{eq:biotnumber}| that isn't printed.  Those labels
-%  can be used to reference the appropriate equation.  If you want to
-%  draw attention to Equation (\ref{eq:biotnumber}), you can just
-%  reference the label.  Again, if you reorder your equations, the
-%  reference will automatically update.  
 
   Math can also be inserted inline by wrapping the math in \$ signs. So
   you might write: 
@@ -234,6 +226,9 @@ rendered in the pdf.
         \end{tabular}
       \caption{AL East Standings 2013 Season\label{tab:aleast2013}}
     \end{verbatim}
+
+    \vspace{2cm}
+
     \begin{table}[ht]
       \centering
         \begin{tabular}{lcccccc}
@@ -253,24 +248,30 @@ rendered in the pdf.
     \vspace{.5cm}
 
     \begin{verbatim}
+    \begin{table}[ht]
+      \centering
     \begin{tabular}{ l | c || r }
       1 & 2 & 3 \\
       4 & 5 & 6 \\
       7 & 8 & 9 \\
     \end{tabular}
+  \end{table}
     \end{verbatim}
     \vspace{.5cm}
 
     yields
     \vspace{.5cm}
-
-\begin{tabular}{ l | c || r }
-  1 & 2 & 3 \\
-  4 & 5 & 6 \\
-  7 & 8 & 9 \\
-\end{tabular}
+    \begin{table}[ht]
+      \centering
+          \begin{tabular}{ l | c || r }
+          1 & 2 & 3 \\
+          4 & 5 & 6 \\
+          7 & 8 & 9 \\
+            \end{tabular}
+    \end{table}
 
   \vspace{.5cm}
+
   There are many helper programs that will automatically generate tables
   from MATLAB or Python or Excel.  You can find a list of them at
   \url{http://en.wikibooks.org/wiki/LaTeX/Tables#Using_spreadsheets}
