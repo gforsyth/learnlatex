@@ -4,7 +4,7 @@ LaTeX is a document preparation system.  A document is prepared in a "markup lan
 
 #Installing/Using LaTeX
 
-To use LaTeX, you need both an editor and a compiler.  The editor can be any standard code editor although you may prefer using one that has LaTeX support (shortcuts, autocomplete, etc...).  I've used [Texmaker](http://www.xm1math.net/texmaker/download.html) in the past and think it's pretty good.  
+To use LaTeX, you need both an editor and a compiler.  The editor can be any standard code editor although you may prefer using one that has LaTeX support (shortcuts, autocomplete, etc...).  
 
 The compiler is a package that you install on your machine (unless you use one of the online options).  Instructions are available on the sites listed below to install the LaTeX compiler for your OS.
 
@@ -14,7 +14,9 @@ Use an online editor and compiler.  Both [ShareLatex](http://sharelatex.com) and
 
 ##Install locally
 
-###Windows
+##Windows
+
+###Compiler
 I recommend using MiKTeX on Windows.  The download page is [here](http://www.miktex.org/2.9/setup).  If you are using a machine in a lab, you probably don't have administrator rights, but you can still install and use the MiKTeX Portable version available on the download page.  
 From the MiKTeX website:
 
@@ -24,11 +26,25 @@ The portable edition allows you to run MiKTeX from a portable storage device:
 *  by using MiKTeX Portable, you leave no traces on the host computer
 *  you do not need administrator privileges on the host computer
 
-###Mac
+###Editor
+[Texmaker](http://www.xm1math.net/texmaker/download.html) is a nice cross-platform editor with autocomplete and other useful features. 
+
+##Mac
+
+###Compiler
 Download and install the [MacTex Package](http://mirror.ctan.org/systems/mac/mactex/MacTeX.mpkg.zip).  This may require admin rights. 
 
-###Linux
-Your distribution almost certainly has a LaTeX package available.  Use your package manager to download and install it.  
+###Editor
+The MacTex package includes the TeXworks editor, which is reportedly nice to use.
+
+##Linux
+
+###Compiler
+Your distribution almost certainly has a LaTeX package available.  Use your package manager to download and install it.  You should be able to find a wiki page for your distribution with instructions.
+
+###Editor 
+Again, [Texmaker](http://www.xm1math.net/texmaker/download.html) is a nice cross-platform editor with autocomplete and other useful features. 
+There's also a nice vim plugin called [TeX 9](http://www.vim.org/scripts/script.php?script_id=3508) if you believe in the one true editor.
 
 #Getting started
 
@@ -54,5 +70,8 @@ Assuming the HelloWorld document compiled without issue, we can get started on s
 3. Place the pdf and the editor side by side and go through the code and the resulting document line by line and you'll be able to see how a document is put together. 
 
 You can try changing or adding elements as you go, if you like.  If it doesn't compile, you can always undo your changes or just re-download the original and have another go.  
+
+##Cheat Sheet
+You can also grab the wonderful LaTeX cheat sheet [(pdf)](http://www.stdout.org/~winston/latex/latexsheet.pdf) put together by Winston Chang which is a nice reference to have, especially when you're starting out.
 
 Feedback is welcomed, I'd like this to be useful and not a chore.  
