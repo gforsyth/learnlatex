@@ -16,6 +16,13 @@ Use an online editor and compiler.  Both [ShareLatex](http://sharelatex.com) and
 
 ###Windows
 I recommend using MiKTeX on Windows.  The download page is [here](http://www.miktex.org/2.9/setup).  If you are using a machine in a lab, you probably don't have administrator rights, but you can still install and use the MiKTeX Portable version available on the download page.  
+From the MiKTeX website:
+
+The portable edition allows you to run MiKTeX from a portable storage device:
+*  you carry MiKTeX on a portable storage device for use on any Windows computer
+*  configuration settings are stored on the portable storage device and not in the Windows Registry of the host computer
+*  by using MiKTeX Portable, you leave no traces on the host computer
+*  you do not need administrator privileges on the host computer
 
 ###Mac
 Download and install the [MacTex Package](http://mirror.ctan.org/systems/mac/mactex/MacTeX.mpkg.zip).  This may require admin rights. 
@@ -43,7 +50,7 @@ Assuming the HelloWorld document compiled without issue, we can get started on s
 ##Learn LaTeX
 
 1. Open learnlatex.tex in your editor.  There's a lot going on here, but it will (hopefully!) be pretty straightforward. 
-2. Try to compile learnlatex.tex.  If all goes well, you should have a pdf the corresponds to the code.  
+2. Try to compile learnlatex.tex.  If all goes well, you should have a pdf that corresponds to the code.  
 3. Place the pdf and the editor side by side and go through the code and the resulting document line by line and you'll be able to see how a document is put together. 
 
 You can try changing or adding elements as you go, if you like.  If it doesn't compile, you can always undo your changes or just re-download the original and have another go.  
