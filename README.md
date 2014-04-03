@@ -32,7 +32,7 @@ The portable edition allows you to run MiKTeX from a portable storage device:
 ##Mac
 
 ###Compiler
-Download and install the [MacTex Package](http://mirror.ctan.org/systems/mac/mactex/MacTeX.mpkg.zip).  This may require admin rights. 
+Download and install the MacTex package from [this page](http://www.tug.org/mactex/index.html).  This may require admin rights. 
 
 ###Editor
 The MacTex package includes the TeXworks editor, which is reportedly nice to use.
